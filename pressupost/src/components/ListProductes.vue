@@ -4,17 +4,31 @@
     <input type="checkbox" v-on:change= "calcula($event)">      
     {{ product.product }}
     ( {{ product.preu }} €)
+    <!-- Mostrem únicament si el producte es crear una web -->
+        <Panell v-bind:product="product"  v-if="product.id==1"   />               
     </p>    
   </div>      
 </template>
 
 <script>
+import Panell from './Panell';
 
 export default {
   name: "ListProductes",
+   data() {
+    return {
+      //numPagines: this.numPagines
+    };
+  },
+  components: {
+    Panell,
+  },
   props:['product'],   
+  events:{
+
+  },
   methods: {
-      //li passe el event per saber si el checkbox està seleccionat
+      //li passo el event per saber si el checkbox està seleccionat
       calcula(event){            
         if (event.target.checked == true){        
           this.$emit('suma',this.product.id)        
@@ -22,7 +36,7 @@ export default {
           this.$emit('resta',this.product.id)        
         }         
       }
-  }   
+}
 }
 </script>
 
