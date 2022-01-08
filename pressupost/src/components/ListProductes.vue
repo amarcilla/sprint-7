@@ -19,7 +19,7 @@ export default {
         if (event.target.checked == true){        
           this.$emit('suma',this.product.id)        
         } else {
-           alert("resta");
+          this.$emit('resta',this.product.id)        
         }         
       }
   }   

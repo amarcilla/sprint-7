@@ -4,9 +4,9 @@
        <div v-for="product in Productes" :Key="product.id" >     
           <!-- v-bind:product="product", si no es diuen igual em dona error... ha de ser el item i el prompt del Listproductes amb el mateix nom   -->
           <!-- el primer es el item, el segon es el propmt  -->
-          <ListProductes v-bind:product="product"  v-on:suma="$emit('suma',product.id)" />  
+          <ListProductes v-bind:product="product"  v-on:suma="$emit('suma',product.id)" v-on:resta="$emit('resta',product.id)" />  
        </div>
-       Preu: Calcula total {{total}}
+       Preu: Calcula total {{total}} €
   </div>
 </template>
 

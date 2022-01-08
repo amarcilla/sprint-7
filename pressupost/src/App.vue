@@ -2,7 +2,7 @@
   <!-- el primer Productes, es el Prompt de Home.vue   -->
   <!-- el segon productes, és el corresponent a la data()  -->
   <!-- <Home v-bind:Productes="productes" />  -->
-  <Home v-bind:Productes="productes" v-bind:total="total" v-on:suma="suma" /> 
+  <Home v-bind:Productes="productes" v-bind:total="total" v-on:suma="suma" v-on:resta="resta" /> 
 </template>
 
 <script>
@@ -37,10 +37,14 @@ export default {
     }
   },
  methods: {
-   suma(id){
+   suma(id){     
     var p= this.productes.find(c => c.id == id);
     this.total = parseInt(this.total) + parseInt(p.preu)
-   }   
+   },
+   resta(id){         
+    var p= this.productes.find(c => c.id == id);
+    this.total = parseInt(this.total) - parseInt(p.preu)
+   }      
  }, 
 }
 </script>
