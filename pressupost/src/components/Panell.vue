@@ -22,8 +22,9 @@ export default {
       calculaPagines(){
           //console.log("pagines: " + this.numPagines + "  " + this.product.numPagines);
           //console.log("Idiomes: " + this.numIdiomes);          
-          //parseInt(this.numPagines) + parseInt(this.numIdiomes)         
-          this.$parent.$parent.$parent.$emit('multiplica', {numPagines: this.numPagines,  numIdiomes: this.numIdiomes} )
+          //parseInt(this.numPagines) + parseInt(this.numIdiomes)    
+          //parent es per indicar a quin pare volem que vagi.. en aquest cas... anem a la Home .
+          this.$parent.$parent.$emit('multiplica', this.numPagines, this.numIdiomes )
       }    
   },
 }

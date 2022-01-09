@@ -22,8 +22,8 @@ export default {
          id:1,
          product: "Crear pàgina web",
          preu: "500",
-         numPagines:0,
-         numIdiomes:0
+         numPagines:1,
+         numIdiomes:1
         },
         {
          id:2,
@@ -50,10 +50,10 @@ export default {
     var p= this.productes.find(c => c.id == id);
     this.total = parseInt(this.total) - parseInt(p.preu)
    },
-    multiplica( ){
-      console.log("Multil" )
-      //console.log("numero de pagines" + parseInt(num))    
-      //this.total = parseInt(this.total) * num
+    multiplica(pag, idi ){
+      this.productes[0].numPagines= pag;
+      this.productes[0].numIdiomes= idi;
+      this.total = parseInt(this.total) +  (parseInt(this.productes[0].numPagines) * parseInt(this.productes[0].preu));     
    },               
  }, 
 }
