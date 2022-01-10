@@ -1,12 +1,14 @@
 <template>
  <div >
-    <p>
-    <input type="checkbox" v-on:change= "calcula($event)">      
-    {{ product.product }}
-    ( {{ product.preu }} €)
+    <div class='Products'>
+        <input type="checkbox" v-on:change= "calcula($event)">      
+        {{ product.product }}
+        ( {{ product.preu }} €)
+    </div>
     <!-- Mostrem únicament si el producte es crear una web -->
-        <Panell v-bind:product="product"  v-if="product.id==1"   />               
-    </p>    
+      <div class='panell'> 
+        <Panell v-bind:product="product"  v-if="product.id==1"   />            
+      </div>  
   </div>      
 </template>
 
@@ -30,7 +32,7 @@ export default {
   methods: {
       //li passo el event per saber si el checkbox està seleccionat
       calcula(event){            
-        if (event.target.checked == true){        
+        if (event.target.checked == true) {                  
           this.$emit('suma',this.product.id)        
         } else {
           this.$emit('resta',this.product.id)        
@@ -42,18 +44,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+
+
+.panell{
+  display:inline-block;  
+  width: 100%;
+  list-style-type: none;  
 }
 </style>
