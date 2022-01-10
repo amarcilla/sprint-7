@@ -8,8 +8,9 @@
           <input
             type="text"
             v-on:change="calculaPagines"
-            v-model="numPagines"               
-          />            
+            v-model="numPagines"   
+           
+          />  
             <button v-on:click ="reducirPag('pag')"  class="boton" >-</button>
         </li>
         <li class="form-row">
@@ -33,6 +34,7 @@
 export default {
   name: "Panell",
   props: ["product"],
+  
   data() {
     return {
       numPagines: this.product.numPagines,
@@ -76,7 +78,7 @@ export default {
   
   setvalue(){
     //this.numPagines= this.product.numPagines;
-    //console.log("this.numPagines-1");
+    console.log("this.numPagines-1");
   }
 
 },

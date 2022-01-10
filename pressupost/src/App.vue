@@ -59,23 +59,23 @@ export default {
       });      
       return TotalP;
     },
+
   },
   methods: {    
     suma(id) {
+      //afegim el producte checkejat
       var p = this.productes.find((c) => c.id == id);      
       p.num=1;
-      //this.total = parseInt(this.total) + parseInt(p.preu);
     },
-    resta(id) {            
+    resta(id) {     
+      // el producte checkejat       
       var p = this.productes.find((c) => c.id == id);
       p.num=0;
-      //this.total = parseInt(this.total) - parseInt(p.preu);
     },
     multiplica(pag, idi) {
       //console.log(pag + " " + idi);
       this.productes[0].numPagines = pag;
       this.productes[0].numIdiomes = idi;
-      //this.total =  parseInt(this.total) +  parseInt(this.productes[0].numPagines) *   parseInt(this.productes[0].preu);
     },
   },
 };
