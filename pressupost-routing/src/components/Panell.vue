@@ -18,7 +18,7 @@
 
       <transition name="fade">
             <div class="modal" v-if="showModal2">             
-            <p >En aquest component has d'incloure el número d'idiomes que tindrà el teu lloc web</p>
+            <p >En aquest component has d'incloure el número de planes que tindrà el teu lloc web</p>
             <button @click="showModal2 = false" class="btn btn-primary"  > tancar </button>
             </div>
        </transition>
@@ -122,7 +122,7 @@ export default {
 .wrapper {
   display:inline-block;
   border: solid;
-  width: 30%;
+  width: 85%;
   padding: 10px;
   border-radius: 10px;
   justify-content: center;  
@@ -165,8 +165,8 @@ input[type="submit"] {
 
 .modal{
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 25%;
   transform: translate(-50%, -50%);
   background: white;
   padding: 20px;

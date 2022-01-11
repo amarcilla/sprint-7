@@ -19,7 +19,6 @@ export default {
   name: "ListProductes",
   data() {
     return {
-      //numPagines: this.numPagines
       ckeckedWeb: false,
     };
   },
@@ -46,9 +45,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.Products{
+  border: solid;
+  align-content: left;
+}
+
 .panell {
   display: inline-block;
   width: 100%;
   list-style-type: none;
+ 
 }
 </style>

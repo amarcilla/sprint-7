@@ -8,12 +8,14 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+/* Els estils de la class="Home"  */
+#app {      
+  font-family: Avenir, Helvetica, Arial, sans-serif;    
+  color: #2c3e50;  
+}
+
+#app > div {
+  width: 40%;
 }
 
 #nav {
