@@ -31,8 +31,9 @@ export default {
   methods: {
     //li passo el event per saber si el checkbox està seleccionat
     calcula(event) {
-      if (event.target.checked == true && this.product.id == 1) {
-        this.ckeckedWeb = true;        
+      if (event.target.checked == true ) {
+        if (this.product.id == 1) this.ckeckedWeb = true; 
+        console.log("entra");               
         this.$emit("suma", this.product.id);
       } else {
         this.ckeckedWeb = false;

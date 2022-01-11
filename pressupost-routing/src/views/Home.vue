@@ -1,22 +1,17 @@
 <template>
-  <!-- el primer Productes, es el Prompt de Home.vue   -->
-  <!-- el segon productes, és el corresponent a la data()  -->
-  <!-- <Home v-bind:Productes="productes" />  -->
-   <div>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/calculadora">Calculadora</router-link>
-   </div>  
-  <Home
+  <div class="home">
+    <Home
     v-bind:Productes="productes"
     v-bind:total="total"
     v-on:suma="suma"
     v-on:resta="resta"
     v-on:multiplica="multiplica"
   />
+  </div>
 </template>
 
 <script>
-import Home from "./components/Home";
+import Home from '@/components/Home.vue'
 
 export default {
   name: "App",
@@ -83,11 +78,3 @@ export default {
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
