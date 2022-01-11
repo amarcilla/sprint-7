@@ -1,6 +1,28 @@
 <template>
   <div>
     <form v-on:submit.prevent="submitForm">
+       <transition name="fade">
+            <div class="modal-overlay" v-if="showModal"> </div>
+       </transition>
+
+      <transition name="fade">
+            <div class="modal" v-if="showModal">             
+            <p >En aquest component has d'incloure el número de planes que tindrà el teu lloc web</p>
+            <button @click="showModal = false" class="btn btn-primary"  > tancar </button>
+            </div>
+       </transition>
+
+       <transition name="fade">
+            <div class="modal-overlay" v-if="showModal2"> </div>
+       </transition>
+
+      <transition name="fade">
+            <div class="modal" v-if="showModal2">             
+            <p >En aquest component has d'incloure el número d'idiomes que tindrà el teu lloc web</p>
+            <button @click="showModal2 = false" class="btn btn-primary"  > tancar </button>
+            </div>
+       </transition>
+
       <ul class="wrapper">
         <li class="form-row">
           <label>Número de planes</label>
@@ -11,6 +33,7 @@
             v-model="numPagines"              
           />  
             <button v-on:click ="reducirPag('pag')"  class="boton" >-</button>
+            <button  @click="showModal = true" class="btn btn-primary"  > i </button>
         </li>
         <li class="form-row">
           <label>Número d'idiomes </label>
@@ -21,6 +44,7 @@
             v-model="numIdiomes"
           />
           <button v-on:click ="reducirIdi('idi')"  class="boton">-</button>
+          <button  @click="showModal2 = true" class="btn btn-primary"> i </button>
         </li>
       </ul>
     </form>
@@ -28,6 +52,10 @@
     {{product.numIdiomes}}
 
     numP {{numPag}}
+     
+  
+     
+
   </div>
 </template>
 
@@ -40,6 +68,8 @@ export default {
     return {
       numPagines: this.product.numPagines,
       numIdiomes: this.product.numIdiomes,
+      showModal: false,
+      showModal2: false,
     };
   },
 
@@ -88,6 +118,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .wrapper {
   display:inline-block;
   border: solid;
@@ -132,4 +163,29 @@ input[type="submit"] {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
 
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  z-index: 101;
+}
+
+.modal-overlay{
+  position: absolute;
+  top:  0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+fade-enter{
+
+}
 </style>
