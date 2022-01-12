@@ -11,30 +11,28 @@
           v-on:resta="$emit('resta', product.id)"
         />
       </div>
-      <hr>
+      <hr />
+
+      <!-- CREAR PRESSUPOST  -->
       <div id="dadesForm">
-        <form>
-          <div class="form-row">
-            Informació del pressupost:
-          </div>
+        <form >
+          <div class="form-row">Informació del pressupost:</div>
           <div class="form-row">
             Nom Pressupost: <input type="text" v-model="nomPressupost" />
           </div>
           <div class="form-row">
             Nom cliente: <input type="text" v-model="nomclient" />
           </div>
+          <div class="form-row">Preu total del pressupost: {{ total }} €</div>
           <div class="form-row">
-            Preu total del pressupost: {{ total }} €
-          </div>
-          <div class="form-row">
-            <button>Envia Pressuspost</button>
+            <button v-on:click="enviaPressupost()">Envia Pressuspost</button>
           </div>
         </form>
       </div>
     </div>
 
     <div id="pressupost">
-      <PressupostList />
+      <PressupostList v-bind:pressupost="pressupost" />
     </div>
   </section>
 </template>
@@ -43,6 +41,7 @@
 <script>
 import ListProductes from "./ListProductes";
 import PressupostList from "./PressupostList";
+import axios from "axios";
 
 export default {
   name: "Home",
@@ -50,14 +49,43 @@ export default {
     ListProductes,
     PressupostList,
   },
-  methods: {},
-  Data() {
+  props: ["Productes", "total"],
+  data() {
     return {
-      nomPressupost: this.nomPressupost,
-      nomclient: this.nomClient,
+      pressupost: [],      
     };
   },
-  props: ["Productes", "total", "numPag"],
+  methods: {
+    enviaPressupost(){      
+      let pressupostNew = {
+            id: 7,
+            nomPressupost: "Crear pàgina web 4",
+            nomClient: "Cliente d",
+            Servei: "Pressupost d",
+            total: 4000
+      };
+
+      axios.post("http://localhost:3000/pressupost", pressupostNew ).then((result) => {
+          console.log(result);     
+       });
+  }
+  },
+
+  /* Llegim JSON Amb AXIOS */
+  async created(){
+      const response  = await axios.get('http://localhost:3000/pressupost');
+      this.pressupost = response.data;
+  }
+  
+  /* Llegim JSON Amb fetch
+   mounted(){
+      fetch('http://localhost:3000/pressupost')
+        .then((res)=> res.json() )
+        .then(data => this.pressupost = data)
+        .catch(err => console.log(err.message ))
+     } 
+  */
+
 };
 </script>
 
@@ -68,7 +96,6 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
 #main > div {
@@ -77,7 +104,6 @@ export default {
 
 #pressupost {
   margin: 0px, auto;
- 
 }
 
 #dadesForm {

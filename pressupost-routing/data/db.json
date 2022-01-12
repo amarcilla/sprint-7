@@ -1,0 +1,53 @@
+{
+  "pressupost": [
+    {
+      "id": 1,
+      "nomPressupost": "Crear pàgina web 1",
+      "nomClient": "Cliente a",
+      "Servei": "Pressupost",
+      "total": 1000
+    },
+    {
+      "id": 2,
+      "nomPressupost": "Crear pàgina web 2",
+      "nomClient": "Cliente b",
+      "Servei": "Pressupost",
+      "total": 2000
+    },
+    {
+      "id": 3,
+      "nomPressupost": "Crear pàgina web 3",
+      "nomClient": "Cliente b",
+      "Servei": "Pressupost",
+      "total": 3000
+    },
+    {
+      "id": 4,
+      "nomPressupost": "Crear pàgina web 4",
+      "nomClient": "Cliente d",
+      "Servei": "Pressupost d",
+      "total": 4000
+    },
+    {
+      "id": 5,
+      "nomPressupost": "Crear pàgina web 4",
+      "nomClient": "Cliente d",
+      "Servei": "Pressupost d",
+      "total": 4000
+    },
+    {
+      "id": 6,
+      "nomPressupost": "Crear pàgina web 4",
+      "nomClient": "Cliente d",
+      "Servei": "Pressupost d",
+      "total": 4000
+    },
+    {
+      "id": 7,
+      "nomPressupost": "Crear pàgina web 4",
+      "nomClient": "Cliente d",
+      "Servei": "Pressupost d",
+      "total": 4000
+    }
+  ]
+}

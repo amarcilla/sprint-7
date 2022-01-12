@@ -109,7 +109,7 @@ export default {
   
   setvalue(){
     //this.numPagines= this.product.numPagines;
-    console.log("this.numPagines-1");
+    //console.log("this.numPagines-1");
   }
 
 },
