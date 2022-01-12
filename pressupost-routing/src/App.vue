@@ -12,10 +12,11 @@
 #app {      
   font-family: Avenir, Helvetica, Arial, sans-serif;    
   color: #2c3e50;  
+  width: 100%;
 }
 
 #app > div {
-  width: 40%;
+  width: 85%;
 }
 
 #nav {
@@ -30,4 +31,6 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+
 </style>

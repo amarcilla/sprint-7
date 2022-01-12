@@ -47,7 +47,6 @@ export default {
 <style scoped>
 
 .Products{
-  border: solid;
   align-content: left;
 }
 
